@@ -1,0 +1,10 @@
+@import '../../styles/utils/base';
+
+.navbar{
+    height: 20rem;
+    background-color: orangered;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

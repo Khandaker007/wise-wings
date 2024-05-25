@@ -1,0 +1,10 @@
+@import '../../../../styles/utils/base';
+
+.heroSection {
+    height: 100svh;
+    background-color: pink;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,10 @@
+@import '../../../../styles/utils/base';
+
+.contentSection {
+    height: 100svh;
+    background-color: greenyellow;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
