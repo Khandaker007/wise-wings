@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { INavLinkProps } from './NavLink.type';
 
-import style from './NavLink.module.scss';
+import style from './navLink.module.scss';
 const {
     navItem,
     navLink,
