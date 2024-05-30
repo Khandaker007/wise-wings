@@ -1,0 +1,87 @@
+@import '../../../../styles/utils/base';
+
+.contactSection {
+    padding: 10rem 15rem;
+
+    @include response(tab-port){
+        padding: 10rem;
+    }
+    @include response(phone){
+        padding: 10rem 5rem;
+    }
+
+    .heading{
+        font-size: 4rem;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+    }
+    .contactContainer{
+        margin-top: 10rem;
+        display: grid;
+        grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+        grid-template-rows: repeat(2, [row-start] max-content [row-end]);
+        gap: 5rem;
+
+        @include response(phone){
+            grid-template-columns: [col-start] 1fr [col-end];
+            grid-template-rows: repeat(3, [row-start] max-content [row-end]);
+        }
+
+        .contentContainer{
+            grid-column: col-start 1 / col-end 1;
+            grid-row: row-start 1 / row-end 1;
+
+            @include response(phone){
+                grid-column: col-start / col-end;
+                grid-row: row-start 2 / row-end 2;
+            }
+    
+            .heading{
+                font-size: 3rem;
+                font-weight: 600;
+                letter-spacing: .3rem;
+                text-transform: uppercase;
+            }
+            .addressInfo{
+                margin-top: 2rem;
+                max-width: 40rem;
+    
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+    
+                .address,
+                .email,
+                .phone{
+                    font-size: 1.7rem;
+                    letter-spacing: .2rem;
+    
+                    span:first-of-type{
+                        font-weight: 400;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        .mapContainer{
+            grid-column: col-start 1 / col-end 1;
+            grid-row: row-start 2 / row-end 2;
+            
+            height: 35rem;
+
+            @include response(phone){
+                grid-column: col-start / col-end;
+                grid-row: row-start 3 / row-end 3;
+            }
+        }
+        .formContainer{
+            grid-column: col-start 2 / col-end 2;
+            grid-row: row-start 1 / row-end 2;
+
+            @include response(phone){
+                grid-column: col-start / col-end;
+                grid-row: row-start 1 / row-end 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import '../../../styles/utils/base';
+
+.navItem {
+    .navLink{
+        font-size: 1.3rem;
+        color: $color-light;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        text-decoration: none;
+        transition: all .2s;
+
+        @include response(tab-port){
+            font-size: 2rem;
+        }
+
+    }
+    &:hover .navLink{
+        color: $color-secondary;
+    }
+}
+.active{
+    color: $color-secondary !important;
+}
+

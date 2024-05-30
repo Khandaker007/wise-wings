@@ -1,0 +1,16 @@
+@import '../../../../styles/utils/base';
+
+.aboutMemberSection {
+    padding: 10rem 15rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @include response(tab-port){
+        padding: 10rem;
+    }
+    @include response(phone){
+        padding: 10rem 5rem;
+    }
+}

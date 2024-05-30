@@ -1,0 +1,45 @@
+@import '../../styles/utils/base';
+
+.btn{
+    padding: 1.5rem 3rem;
+    border: 1px solid $color-light;
+    background-color:  transparent;
+    color: $color-light;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-decoration: none;
+    transition: all .2s;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    
+    .line{
+        display: block;
+        height: 1px;
+        width: 2rem;
+        background-color: $color-light;
+    }
+
+    &:hover{
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+    }
+
+}
+
+.btnDark{
+    border: 1px solid $color-dark;
+    color: $color-dark;
+
+    &:hover{
+        border-color: $color-dark;
+    }
+
+    .line{
+        background-color: $color-dark;
+    }
+}

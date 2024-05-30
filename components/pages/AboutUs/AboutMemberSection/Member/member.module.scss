@@ -1,0 +1,48 @@
+@import '../../../../../styles/utils/base';
+
+.member{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include response(phone){
+        grid-template-columns: [col-start] 1fr [col-end];
+        grid-template-rows: repeat(2, [row-start] max-content [row-end]);
+        gap: 3rem;
+    }
+
+    .contentContainer{
+        @include response(phone){
+            grid-column: col-start / col-end;
+            grid-row: row-start 1 / row-end 1;
+        }
+
+        .memberName{
+            font-size: 3rem;
+            letter-spacing: 0.3rem;
+            text-transform: capitalize;
+
+            @include response(desktop){
+                margin-bottom: 2rem;
+            }
+        }
+        .memberDetails{
+            font-size: 2rem;
+            letter-spacing: 0.3rem;
+            max-width: 50rem;
+        }
+    }
+    .imgContainer{
+        height: 45rem;
+
+        @include response(phone){
+            grid-column: col-start / col-end;
+            grid-row: row-start 2 / row-end 2;
+        }
+
+        .img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

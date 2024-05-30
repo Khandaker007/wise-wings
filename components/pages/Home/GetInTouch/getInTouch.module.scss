@@ -1,10 +1,68 @@
 @import '../../../../styles/utils/base';
 
 .getInTouch{
-    height: 100svh;
-    background-color: brown;
+    padding: 10rem 25rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+
+    @include response(desktop){
+        padding: 10rem 15rem;
+    }
+    @include response(tab-port){
+        padding: 10rem;
+    }
+    @include response(phone){
+        padding: 5rem;
+
+        grid-template-columns: [col-start] 1fr [col-end];
+        grid-template-rows: repeat(2, [row-start] max-content [row-end]);
+    }
+
+    .contentContainer{
+        padding: 10rem 0;
+
+        @include response(phone){
+            padding: 5rem 0;
+            grid-column: col-start / col-end;
+            grid-row: row-start 1 / row-end 1;
+        }
+
+        .heading{
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: .3rem;
+            text-transform: uppercase;
+        }
+        .addressInfo{
+            margin-top: 2rem;
+            max-width: 40rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .address,
+            .email,
+            .phone{
+                font-size: 1.7rem;
+                letter-spacing: .2rem;
+
+                span:first-of-type{
+                    font-weight: 400;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+    .mapContainer{
+        background-color: orange;
+        
+        @include response(phone){
+            height: 45rem;
+            grid-column: col-start / col-end;
+            grid-row: row-start 2 / row-end 2;
+        }
+    }
 }

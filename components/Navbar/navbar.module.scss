@@ -1,10 +1,106 @@
 @import '../../styles/utils/base';
 
 .navbar{
-    height: 20rem;
-    background-color: orangered;
+    padding: 2rem 15rem;
+    background-color: $color-dark;
+    // background-color: pink;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    @include response(tab-port){
+        padding: 2rem 5rem;
+    }
+    @include response(phone){
+        height: 10rem;
+        transition: all .3s;
+    }
+
+    .logoContainer{
+        height: 7rem;
+        width: 25rem;
+        color: black;
+        // background-color: orangered;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .navContainer{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        @include response(phone){
+            height: 0;
+            width: 100%;
+            background-color: $color-dark;
+            
+            justify-content: center;
+            align-items: flex-start;
+            
+            position: absolute;
+            top: 10rem;
+            left: 0;
+            z-index: 99999;
+            transition: all .3s;
+        }
+        
+        .navList{
+            list-style: none;
+            
+            display: flex;
+            gap: 4rem;
+
+            @include response(tab-port){
+                gap: 2rem;
+            }
+            
+            @include response(phone){
+                padding: 10rem 5rem;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                gap: 6rem;
+            }
+        }
+    }
+
+    .navContainerActive{
+        height: calc(100svh - 10rem);
+    }
+
+    .navBtn{
+        display: none;        
+        
+        @include response(phone){
+            display: inline-block;
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            z-index: 99999999;
+            margin-top: 1rem;
+        }
+        
+        .icon{
+            font-size: 4rem;
+            color: $color-light;
+        }
+    }
+}
+
+.navbarActive{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
 }

@@ -1,10 +1,52 @@
 @import '../../../../styles/utils/base';
 
 .heroSection {
-    height: 100svh;
-    background-color: pink;
+    position: relative;
+    height: calc(100svh - 10rem);
+    background-color: $color-dark;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include response(phone){
+        height: 60rem;
+    }
+
+    .video{
+        border: none;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .contentContainer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color-dark, 0.3);
+        z-index: 11;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .heading{
+            font-size: 10rem;
+            line-height: 1.2;
+            letter-spacing: .5rem;
+            text-transform: uppercase;
+            color: $color-light;
+
+            @include response(phone){
+                font-size: 6rem;
+            }
+
+            span{
+                display: block;
+            }
+        }
+        .btnContainer{
+            margin-top: 4rem;
+        }
+    }
 }
